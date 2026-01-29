@@ -1,25 +1,17 @@
-full_name=input("Enter Full name:")
-email=input("Enter your E-mail ID:")
-mobile_num=input("Enter Mobile number:")
-age=int(input("Enter your age:"))
+fullname=input("Enter your full name: ")
+email=input("Enter your email: ")
+mobileno=input("Enter your mobile number: ")
+age=int(input("Enter your age: "))
 valid=True
-if(full_name[0]==" " or full_name[len(full_name)-1]==" "):
+if(fullname.count(" ")<1 or fullname[0]==" " or fullname[len(fullname)-1]==" "):
     valid=False
-elif(full_name.count(" ")<1):
+elif(email.count("@")<1 or email.count(".")<1 or email[0]=="@"):
     valid=False
-if(email.count("@")<1 or email.count(".")<1):
+elif(mobileno.isdigit()==False or len(mobileno)!=10 or mobileno[0]!=0):
     valid=False
-elif(email[0]=="@"):
+elif( age<18 or age>60):
     valid=False
-if(len(mobile_num)!=10):
-    valid=False
-elif((mobile_num.isdigit()==False)):
-     valid=False
-elif(mobile_num[0]=="0"):
-    valid=False
-if(age<18 or age>60):
-    valid=False
-if valid:
-    print("User profile is VALID")
+if(valid):
+    print("user is valid")
 else:
-    print("User profile is INVALID")
+    print("user is not valid")
